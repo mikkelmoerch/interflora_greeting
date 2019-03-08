@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'mixins';
+
+.list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background: linear-gradient(to bottom, $grey, rgba(255,255,255,0) 15%);
+
+    @include respond-to('sm') {
+        margin: 0 auto;
+        padding: 60px 0;
+        background: none;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__items {
+        margin: map-get($spacing, 0) auto;
+        padding: 0 map-get($spacing, 0);
+        min-height: 200px;
+        max-height: 400px;
+        max-width: 500px;
+        overflow: auto;
+
+        @include respond-to('sm') {
+            margin: map-get($spacing, 0) 0;
+            padding: 0 map-get($spacing, 2);
+            max-width: none;
+        }
+    }
+
+    &__no-greetings {
+        text-align: center;
+        padding-top: map-get($spacing, 0);
+        font-size: 16px;
+    }
+
+    .fadein-enter {
+        opacity: 0;
+        transform: scale(0.5);
+
+        &-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 300ms ease-in, transform 300ms ease-in;
+        }
+    }
+
+    .fadein-leave {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+
+        &-active {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
+            transition: opacity 300ms ease-in, transform 300ms ease-in;
+        }
+    }
+}

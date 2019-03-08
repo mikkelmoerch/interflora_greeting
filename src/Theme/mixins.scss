@@ -1,0 +1,46 @@
+// _mixins.scss
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin hover-supported {
+    @media not all and (hover: none) {
+        @content;
+    }
+}
+
+@mixin flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin shadow($blur: 6px, $opacity: 0.75, $x: 1px, $y: 1px) {
+    box-shadow: $x $y $blur transparentize($shadow-color, $opacity);
+}
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null){
+    -o-object-fit: $fit;
+       object-fit: $fit;
+    @if $position {
+        -o-object-position: $position;
+           object-position: $position;
+        font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+    } @else {
+        font-family: 'object-fit: #{$fit}';
+    }
+  }

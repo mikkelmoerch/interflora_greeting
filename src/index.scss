@@ -1,0 +1,80 @@
+@import '~normalize.css/normalize';
+@import 'variables.scss';
+@import 'mixins.scss';
+
+$font-stack: 'Work Sans', sans-serif;
+
+html {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+  font-family: $font-stack;
+  font-weight: 300;
+  color: #000;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to('sm') {
+    font-size: 18px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  margin: map-get($spacing, 0) / 2 0;
+}
+
+h2 {
+  font-size: map-get($font-size, 5);
+
+  @include respond-to('sm') {
+    font-size: map-get($font-size, 6);
+  }
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+p {
+  line-height: 1.4;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: $grey;
+  min-width: 180px;
+  padding: 16px 15px;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 300;
+
+  &:focus {
+    background-color: #ececec !important;
+    border: 0 solid $purple;
+    outline: 1px solid $purple;
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  text-align: center;
+}

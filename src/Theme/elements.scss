@@ -1,0 +1,22 @@
+@import 'mixins';
+
+.button {
+    min-width: 250px;
+    padding: 16px 0;
+    text-align: center;
+    border-radius: 25px;
+    background: $purple;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: background-color .15s ease;
+
+    @include hover-supported {
+        &:hover {
+            color: $purple;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,.16);
+        }
+    }
+}
