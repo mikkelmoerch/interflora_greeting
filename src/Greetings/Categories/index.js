@@ -27,12 +27,7 @@ const customStyles = {
     }),
     valueContainer: (provided) => ({
         ...provided,
-        padding: '0px 15px',
-        height: 'auto'
-    }),
-    input: (provided) => ({
-        ...provided,
-        height: 'auto'
+        padding: '0px 15px'
     })
 }
 

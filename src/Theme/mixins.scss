@@ -23,16 +23,6 @@
     flex-direction: column;
 }
 
-@mixin shadow($blur: 6px, $opacity: 0.75, $x: 1px, $y: 1px) {
-    box-shadow: $x $y $blur transparentize($shadow-color, $opacity);
-}
-
-/*
-  This mixin can be used to set the object-fit:
-  @include object-fit(contain);
-  or object-fit and object-position:
-  @include object-fit(cover, top);
-*/
 @mixin object-fit($fit: fill, $position: null){
     -o-object-fit: $fit;
        object-fit: $fit;

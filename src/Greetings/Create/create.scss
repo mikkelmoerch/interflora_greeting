@@ -13,7 +13,7 @@
         background: white;
         margin: 0 auto;
         padding: map-get($spacing, 1) map-get($spacing, 0);
-        animation: fadeup 1.5s ease;
+        animation: fadeup 1s ease;
 
         @include respond-to('sm') {
             max-width: 500px;
@@ -22,7 +22,7 @@
 
         @keyframes fadeup {
             from {
-                transform: translateY(40%);
+                transform: translateY(20%);
                 opacity: 0;
             }
             to {
@@ -59,6 +59,6 @@
 
     &__error {
         color: red;
-        margin-bottom: 0;
+        margin-bottom: -(map-get($spacing, 0));
     }
 }

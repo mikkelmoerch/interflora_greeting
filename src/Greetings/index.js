@@ -33,10 +33,10 @@ class Greetings extends Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Create save={(data) => this.addGreeting(data)}/>
                 <List data={this.state.greetings} remove={(i) => this.removeGreeting(i)}/>
-            </div>
+            </React.Fragment>
         )
     }
 }

@@ -16,7 +16,9 @@ class Create extends Component {
     categories = [
         { value: 'friendly', label: 'Venskabelig' },
         { value: 'holiday', label: 'Højtid' },
-        { value: 'birthday', label: 'Fødselsdag' }
+        { value: 'birthday', label: 'Fødselsdag' },
+        { value: 'fun', label: 'For sjov' },
+        { value: 'wedding', label: 'Bryllup' }
     ]
 
     handleInputChange(event) {
@@ -63,12 +65,19 @@ class Create extends Component {
                         </p>
                     </div>
                     <div className="create__form">
-                        <input className="create__input" placeholder="Indtast hilsen" name="greeting" value={this.state.greeting} onChange={(e) => this.handleInputChange(e)} />
+                        <input className="create__input"
+                            placeholder="Indtast hilsen"
+                            name="greeting"
+                            value={this.state.greeting}
+                            onChange={(e) => this.handleInputChange(e)} />
+
                         <Categories options={this.categories}
                             value={this.state.category}
                             onChange={(e) => this.onCategoryChange(e)}
                             onOpen={() => this.onCategoryOpen()}/>
+
                         { this.state.showError ? <p className="create__error">Ikke alle felter er udfyldt</p> : null }
+
                         <div className="create__button button" onClick={() => this.create()}>
                             GEM HILSEN
                         </div>

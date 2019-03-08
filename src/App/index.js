@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import './App.scss';
 import Header from '../Header';
 import Greetings from '../Greetings';
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <React.Fragment>
         <Header />
         <Greetings />
-      </div>
-    );
+      </React.Fragment>
+    )
   }
 }
 
-export default App;
+export default App
