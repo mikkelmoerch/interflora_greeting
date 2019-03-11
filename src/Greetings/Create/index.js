@@ -44,7 +44,7 @@ class Create extends Component {
     create() {
         const { greeting, category } = this.state
 
-        if (greeting !== '' && category !== '') {
+        if (greeting && greeting !== '' && category && category !== '') {
             this.props.save({ greeting, category })
             this.setState({ greeting: '', category: '' })
         } else {
